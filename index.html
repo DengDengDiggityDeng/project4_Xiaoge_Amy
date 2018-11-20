@@ -8,5 +8,39 @@
 </head>
 <body>
      
+     
+     
+     
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+     <script>
+     // console.log("hello")
+
+     const app = {}; 
+     app.url = "https://app.ticketmaster.com/discovery/v2/events";
+     app.key = "OQa6vjv7yrxFTtC6UW4LyoU6bxqeloBC";
+  
+
+app.call = function (){
+     $.ajax({
+          url: app.url,
+          method: 'GET',
+          data: {
+               apikey: app.key,
+               format: 'json',
+          }         
+     }).then((res)=> {
+               console.log(res);
+          });
+}
+
+$(function (){
+
+     app.call();
+
+});
+          
+     </script> 
+     
 </body>
 </html>
+
