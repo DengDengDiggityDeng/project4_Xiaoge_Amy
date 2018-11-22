@@ -1,0 +1,114 @@
+html,
+body{
+  /* 1rem = 10px */
+  font-size: 62.5%;
+}
+
+p, li{
+  /* 16px */
+  font-size: 1.6rem;
+}
+
+.wrapper{
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* full view height parallax with 5 layers */
+.parallax{
+  perspective: 100px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $background;
+}
+
+/* styling of individual parallax layers */
+.parallax-layer{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: colomn;
+  justify-content: center;
+  
+  /* styling of img inside each parallax layer */
+  img{
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    object-fit: fill;
+  }
+}
+
+/* main content is in here */
+.parallax-body{
+  /* background is the default, background 5b is for the dark red */
+  background: $background5c;
+  display: block;
+  position: absolute;
+  /* top must be > 85% so as to not cover up parallax_layer_5 */
+  top: 90%;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  
+  /* categories */
+  .categories{
+    color: goldenrod;
+    margin: 25vh 0;
+    
+    ul{
+      height: 50vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      
+    }
+    
+    .category{
+      display: inline-block;
+      width: 25%;
+      border: 1px solid goldenrod;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  
+  /* questions */
+  .question{
+    color:white;
+    padding: 20px;
+  }
+}
+
+/* footer */
+.parallax-footer{
+  background-color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* sets the number of parallax layers and does the actual parallax effect */
+$parallax_layers: 5;
+@for $i from 0 through $parallax_layers {
+  $x: ($parallax_layers - $i) / 2;
+  .parallax_layer_#{$i}{
+     transform: translateZ(-100 * $x#{px}) scale($x + 1);
+  }
+}
