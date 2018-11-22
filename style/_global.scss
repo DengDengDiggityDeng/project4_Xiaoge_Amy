@@ -53,7 +53,7 @@ p, li{
 /* main content is in here */
 .parallax-body{
   /* background is the default, background 5b is for the dark red */
-  background: $background5b;
+  background: $background5c;
   display: block;
   position: absolute;
   /* top must be > 85% so as to not cover up parallax_layer_5 */
@@ -68,7 +68,7 @@ p, li{
     margin: 25vh 0;
     
     ul{
-      height: 100vh;
+      height: 50vh;
       display: flex;
       flex-direction: row;
       justify-content: center;

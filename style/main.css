@@ -189,7 +189,7 @@ p, li {
 /* main content is in here */
 .parallax-body {
   /* background is the default, background 5b is for the dark red */
-  background: #2a1111;
+  background: #994848;
   display: block;
   position: absolute;
   /* top must be > 85% so as to not cover up parallax_layer_5 */
@@ -203,7 +203,7 @@ p, li {
     color: goldenrod;
     margin: 25vh 0; }
     .parallax-body .categories ul {
-      height: 100vh;
+      height: 50vh;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
