@@ -24,8 +24,9 @@ app.call = function (categoryID, changed) {
                offset: changed,
           }
      }).then((res) => {
-          app.displayResults(res);
-          // console.log(res);
+          app.filteredRes = res.filter(question => question.question !== "");
+          app.displayResults(app.filteredRes);
+          console.log(app.filteredRes);
           
      });
 }
@@ -39,22 +40,22 @@ app.displayResults = function (questions) {
      app.fiveQuestions = questions.slice(0,1);
      
           app.fiveQuestions.forEach((q) => {
+               if (q.question !== "") {
+               $('.clue').html(
+               `    <div class="question">
+                         <p>Question: ${q.question} <p> 
+                    </div>`)
 
-               $('.questions-list').html(
-          `<div class="question">
-               <div class="clue">
-                    <p>Question: ${q.question}<p> 
-               </div>
-               <div class="answer">
-                    <p>Answer: ${q.answer}<p>
+               $('.answer').html(
+          `    <div>
+                    <p>Answer: ${q.answer}</p>
                     <p>Air Date: ${q.airdate.substring(0,10)}</p>
-               </div>
-          </div>
-          `          
-               )
-               $('.question-category').html(
-          `${q.category.title}`          
-               )
+               </div>`)
+
+               $('.question-category').html(`${q.category.title}`);
+          }
+
+
           }); 
      }
 
@@ -63,28 +64,26 @@ app.displayResults = function (questions) {
 app.changeOffset = function() {
      app.offsetValue = 0
      $('.next-question').on('click', function(){
+          $('.answer').removeClass('show');
+          $('.answer').addClass('hide');
           // console.log(app.offsetValue);
           if (app.offsetValue < 50) {
                app.offsetValue++; 
           } else {
                app.offsetValue = 0;
           }
-          $('.questions-list').empty();
           app.call(app.categoryChoice, app.offsetValue)
           return app.offsetValue;
      })
 }
 
 
-app.changeOffset();
 
 //-------------------------SELECT CATEGORY FUNCTION--------------------
 
 app.click = function(){
 
      $('.category').on('click', function() {
-
-          $('.questions-list').empty();
           app.categoryChoice = $(this)[0].id;          
           app.call(app.categoryChoice, app.offsetValue)
           $('.next-question').removeClass('visually-hidden');
@@ -92,16 +91,24 @@ app.click = function(){
      })
 
 }
+//-------------------------Show answer---------------------------
 
-
+app.answerToggle = function () {
+     $('.answer').on('click', function () {
+          $('.answer').removeClass('hide');
+          $('.answer').addClass('show');
+     });
+}
+app.answerToggle();
 
 
 
 //-------------------------APP INIT---------------------------
 
 app.init = function(){
-     // app.call();
      app.click();
+     app.changeOffset();
+
 };
 
 //-------------------------DOCUMENT READY----------------------
