@@ -21,25 +21,44 @@ app.call = function (categoryID) {
           method: 'GET',
           data: {
                category: categoryID,
+               // offset: 100,
                // value: 400,
                // count: 4,
           }
      }).then((res) => {
-          app.questionList = res;
-          console.log(app.questionList);
-          // app.questionList.map((item) => {
-          //      console.log(`CATEGORY: ${item.category.title}`)
-          //      console.log(`HERE IS THE QUESTION: ${item.question}
-          //                ANSWER: ${item.answer}  ${item.value}
-          //                `)
-          // })
+          app.displayResults(res);
+          // console.log(res);
+          
      });
 }
 
 
+// console.log(app.questionList)
+//Print results
+
+app.displayResults = function (questions) {
+     app.fiveQuestions = questions.slice(0, 5);
+     
+          app.fiveQuestions.forEach((q) => {
+               $('.questions-list').append(
+          `<li class="question">
+               <p>ID: ${q.id}<p> 
+               <p>Catagory: ${q.category.id} -- ${q.category.title} <p> 
+               <p>---</p>
+               <p>Question: ${q.question}<p> 
+               <p>Answer: ${q.answer}<p> 
+               <p>-------------------------------------------------</p>
+          </li>`
+               )
+          }); 
+}
+
+//-------------------------SELECT CATEGORY FUNCTION--------------------
+
 app.click = function(){
 
      $('.category').on('click', function() {
+          $('.questions-list').empty();
           app.categoryChoice = $(this)[0].id;
           console.log(app.categoryChoice);
           // console.log($(this));
@@ -47,10 +66,6 @@ app.click = function(){
      })
 
 }
-
-
-
-
 
 
 
