@@ -132,9 +132,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-ul, li {
-  list-style-type: none; }
-
 html,
 body {
   /* 1rem = 10px */
@@ -203,18 +200,42 @@ p, li {
   /* categories */
   /* questions */ }
   .parallax-body .categories {
-    height: 100vh;
-    color: blue;
-    padding: 20px; }
+    color: goldenrod;
+    margin: 25vh 0; }
+    .parallax-body .categories ul {
+      height: 100vh;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      padding: 0;
+      margin: 0; }
     .parallax-body .categories .category {
-      height: 25vh; }
+      display: inline-block;
+      width: 25%;
+      border: 1px solid goldenrod;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
   .parallax-body .question {
-    color: red;
+    color: white;
     padding: 20px; }
 
 /* footer */
 .parallax-footer {
-  background-color: #4d91bc;
+  background-color: white;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;

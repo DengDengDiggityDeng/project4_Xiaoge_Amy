@@ -64,24 +64,40 @@ p, li{
   
   /* categories */
   .categories{
-    height: 100vh;
-    color: blue;
-    padding: 20px;
+    color: goldenrod;
+    margin: 25vh 0;
+    
+    ul{
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      
+    }
+    
     .category{
-      height: 25vh;
+      display: inline-block;
+      width: 25%;
+      border: 1px solid goldenrod;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
   
   /* questions */
   .question{
-    color:red;
+    color:white;
     padding: 20px;
   }
 }
 
 /* footer */
 .parallax-footer{
-  background-color: $background2;
+  background-color: white;
   text-align: center;
   display: flex;
   flex-direction: column;
