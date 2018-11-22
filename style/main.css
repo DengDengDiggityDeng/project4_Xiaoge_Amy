@@ -272,3 +272,6 @@ body {
 .parallax_layer_5 {
   -webkit-transform: translateZ(0px) scale(1);
   transform: translateZ(0px) scale(1); }
+
+.visually-hidden {
+  visibility: hidden; }
