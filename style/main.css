@@ -137,7 +137,7 @@ body {
   /* 1rem = 10px */
   font-size: 62.5%; }
 
-p, li {
+body {
   /* 16px */
   font-size: 1.6rem; }
 
@@ -157,7 +157,7 @@ p, li {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #42799c; }
+  background: #994848; }
 
 /* styling of individual parallax layers */
 .parallax-layer {

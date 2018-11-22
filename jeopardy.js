@@ -37,7 +37,7 @@ app.call = function (categoryID) {
 //Print results
 
 app.displayResults = function (questions) {
-     app.fiveQuestions = questions.slice(0, 5);
+     app.fiveQuestions = questions.slice(0,1);
      
           app.fiveQuestions.forEach((q) => {
                $('.questions-list').append(
