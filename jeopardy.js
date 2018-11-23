@@ -13,7 +13,9 @@ app.url = "http://jservice.io/api/";
 
 console.log("hey there")
 
-//-------------------------API CALL FUNCTION--------------------
+//-------------------------API CALL FUNCTIONS--------------------
+
+//CALL QUESTIONS:
 
 app.call = function (categoryID, changed) {
      $.ajax({
@@ -26,12 +28,35 @@ app.call = function (categoryID, changed) {
      }).then((res) => {
           app.filteredRes = res.filter(question => question.question !== "");
           app.displayResults(app.filteredRes);
-          console.log(app.filteredRes);
+          // console.log(app.filteredRes);
           
      });
 }
 
+//CALL CATEGORIES:
 
+app.callCategories = function () {
+     $.ajax({
+          url: `${app.url}categories`,
+          method: 'GET',
+          data: {
+               count: 100,
+               offset: 200,
+          }
+     }).then((res) => {
+          console.log(res);
+          app.categoryIDsList = res.filter((category)=>{
+               if (category.clues_count > 40){
+                    console.log(category.id, category.title);
+                    return(category)
+               }
+          })
+          console.log(app.categoryIDsList);
+          
+     });
+}
+
+app.callCategories();
 
 //Print results
 
@@ -86,6 +111,7 @@ app.click = function(){
      $('.category').on('click', function() {
           app.categoryChoice = $(this)[0].id;          
           app.call(app.categoryChoice, app.offsetValue)
+          $('.pick-first').addClass('display-none');
           $('.show-answer').removeClass('hide');
           $('.answer').removeClass('show');
           $('.answer').addClass('hide');
