@@ -1,0 +1,21 @@
+.questions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: $accent2;
+  border: 10px dotted $accent3;
+  padding: 2rem;
+  /* questions */
+  .question{
+    color:white;
+    padding: 0 20px;
+  }
+  /* question options to show answer and go to next question in the category */
+  .question-options{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+}

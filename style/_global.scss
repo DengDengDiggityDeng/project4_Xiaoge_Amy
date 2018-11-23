@@ -1,5 +1,4 @@
-html,
-body{
+html{
   /* 1rem = 10px */
   font-size: 62.5%;
 }
@@ -7,6 +6,20 @@ body{
 body{
   /* 16px */
   font-size: 1.6rem;
+}
+
+h1{
+  font-size: 6rem;
+  font-family: $h1;
+  line-height: 1;
+  color: $secondary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 90px;
+  z-index: 10;
+  -webkit-text-stroke: 1px $background;
 }
 
 .wrapper{
@@ -25,7 +38,7 @@ body{
   left: 0;
   right: 0;
   bottom: 0;
-  background: $background5c;
+  background: $background;
 }
 
 /* styling of individual parallax layers */
@@ -52,8 +65,8 @@ body{
 
 /* main content is in here */
 .parallax-body{
-  /* background is the default, background 5b is for the dark red */
-  background: $background5c;
+  /* background is the default */
+  background: $background;
   display: block;
   position: absolute;
   /* top must be > 85% so as to not cover up parallax_layer_5 */
@@ -61,38 +74,6 @@ body{
   left: 0;
   right: 0;
   z-index: 0;
-  
-  /* categories */
-  .categories{
-    color: goldenrod;
-    margin: 25vh 0;
-    
-    ul{
-      height: 50vh;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      padding: 0;
-      margin: 0;
-      
-    }
-    
-    .category{
-      display: inline-block;
-      width: 25%;
-      border: 1px solid goldenrod;
-      
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-  
-  /* questions */
-  .question{
-    color:white;
-    padding: 20px;
-  }
 }
 
 /* footer */
@@ -102,6 +83,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 25vh;
 }
 
 /* sets the number of parallax layers and does the actual parallax effect */
@@ -111,10 +93,6 @@ $parallax_layers: 5;
   .parallax_layer_#{$i}{
      transform: translateZ(-100 * $x#{px}) scale($x + 1);
   }
-}
-
-.visually-hidden {
-  visibility: hidden;
 }
 
 //------------- CLASSES FOR HIDING AND SHOWING ANSWER: 

@@ -2,100 +2,110 @@
 <html lang="en">
 
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <title>Project 4</title>
-     <link rel="stylesheet" href="style/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project 4</title>
+  <!-- google web fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Rum+Raisin" rel="stylesheet">
+  <!-- css stylesheet -->
+  <link rel="stylesheet" href="style/main.css">
 </head>
 
 <body>
 
-     <main>
+  <main>
 
-          <!-- everything must be inside the parallax class in order for the parallax effect to work, this means no header and footer tags outside of .parallax -->
-          <div class="parallax">
+    <!-- everything must be inside the parallax class in order for the parallax effect to work, this means no header and footer tags outside of .parallax -->
+    <div class="parallax">
 
-               <!-- layer_1 is the farthest layer -->
-               <div class="parallax-layer parallax_layer_1">
-                    <img src="parallax/layer_1.png" alt="last layer of parallax">
-               </div>
+      <!-- layer_1 is the farthest layer -->
+      <div class="parallax-layer parallax_layer_1">
+        <img src="parallax/layer_1.png" alt="last layer of parallax">
+        <h1>AJAX<br>ANSWERS</h1>
+      </div>
 
-               <!-- layer_2 is the 2nd farthest layer -->
-               <div class="parallax-layer parallax_layer_2">
-                    <img src="parallax/layer_2.png" alt="second last layer of parallax">
-               </div>
+      <!-- layer_2 is the 2nd farthest layer -->
+      <div class="parallax-layer parallax_layer_2">
+        <img src="parallax/layer_2.png" alt="second last layer of parallax">
+      </div>
 
-               <!-- layer_3 is the center layer -->
-               <div class="parallax-layer parallax_layer_3">
-                    <img src="parallax/layer_3b.png" alt="middle layer of parallax">
-               </div>
+      <!-- layer_3 is the center layer -->
+      <div class="parallax-layer parallax_layer_3">
+        <img src="parallax/layer_3b.png" alt="middle layer of parallax">
+      </div>
 
-               <!-- layer_4 is the 2nd closest layer -->
-               <div class="parallax-layer parallax_layer_4">
-                    <img src="parallax/layer_4b.png" alt="second top layer of parallax">
-               </div>
+      <!-- layer_4 is the 2nd closest layer -->
+      <div class="parallax-layer parallax_layer_4">
+        <img src="parallax/layer_4b.png" alt="second top layer of parallax">
+      </div>
 
-               <!-- layer_1 is the closest layer , this layer should match the background colour -->
-               <div class="parallax-layer parallax_layer_5">
-                    <!-- layer_5 is the default, layer_5b is dark red-->
-                    <img src="parallax/layer_5c.png" alt="top layer of parallax">
-               </div>
+      <!-- layer_1 is the closest layer , this layer should match the background colour -->
+      <div class="parallax-layer parallax_layer_5">
+        <!-- layer_5 is the default, layer_5b is dark red-->
+        <img src="parallax/layer_5c.png" alt="top layer of parallax">
+      </div>
 
-               <!-- this is where the main content is, and also the end of the parallax effect -->
-               <div class="parallax-body">
+      <!-- this is where the main content is, and also the end of the parallax effect -->
+      <div class="parallax-body">
 
-                    <div class="wrapper">
+        <div class="wrapper">
 
-                         <!-- categories -->
-                         <section class="categories">
-                              <ul>
-                                   <li class="category category1" id="25">Category 1 science</li>
-                                   <li class="category category2" id="442">Category 2 people</li>
-                                   <li class="category category3" id="21">Category 3 Animals</li>
-                                   <li class="category category4" id="680">Category 4 mythology</li>
-                              </ul>
-                         </section>
+          <!-- categories -->
+          <section class="categories">
+            <ul>
+              <li class="category category1" id="25">Category 1 science</li>
+              <li class="category category2" id="442">Category 2 people</li>
+              <li class="category category3" id="21">Category 3 Animals</li>
+              <li class="category category4" id="680">Category 4 mythology</li>
+            </ul>
+          </section>
 
-                         <!-- questions -->
-                         <section class="questions">
-                              <div class="question-info">
-                                   <!-- Question info goes here -->
-                                   <p class="visually-hidden category-p">Category: <span class="question-category"></span></p>
-                              </div>
-                              <div class="questions-list">
-                                   <div class="clue">
-                                   <!-- Question appears here -->
-     
+          <!-- questions -->
+          <section class="questions">
 
+            <div class="question-info">
+              <!-- Question info goes here -->
+              <p class="hide category-p">Category: <span class="question-category"></span></p>
+            </div>
 
+            <div class="questions-list">
 
-                                   </div>
-                                   <div class="answer hide">
-                                   <!-- Answer and air date go here -->
+              <div class="clue">
+                <!-- Question appears here -->
+              </div>
 
+              <div class="answer hide">
+                <!-- Answer and air date go here -->
+              </div>
 
+            </div>
 
+            <div class="question-options">
 
-                                   </div>
-                              </div>
-                              <a href="#" style="color: white;" class="visually-hidden next-question">Next Question</a>
+              <!-- shows the answer -->
+              <a href="#" style="color: white;" class="hide show-answer">Show Answer</a>
 
-                         </section>
+              <!-- goes to the next question in the category -->
+              <a href="#" style="color: white;" class="hide next-question">Next Question</a>
 
-                    </div>
+            </div>
 
-                    <!-- footer -->
-                    <div class="parallax-footer">
-                         <p>jQuery jeopardy © 2018 </p>
-                    </div>
+          </section>
 
-               </div>
+        </div>
 
-     </main>
+        <!-- footer -->
+        <div class="parallax-footer">
+          <p>Ajax Answers © 2018 </p>
+        </div>
 
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-     <script src="jeopardy.js"></script>
+      </div>
+
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="jeopardy.js"></script>
 </body>
 
 </html>
