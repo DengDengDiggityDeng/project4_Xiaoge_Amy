@@ -134,7 +134,9 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 html {
   /* 1rem = 10px */
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  /* smooth scroll */
+  scroll-behavior: smooth; }
 
 body {
   /* 16px */
@@ -161,7 +163,11 @@ h1 {
   -webkit-text-stroke: 1px #994848; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: inherit; }
+
+ul, li {
+  list-style-type: none; }
 
 .wrapper {
   width: 80%;
@@ -269,12 +275,12 @@ a {
   visibility: visible; }
 
 .display-none {
-  display: none; }
+  visibility: hidden; }
 
 /* categories */
 .categories {
   color: #ffda76;
-  margin: 25vh 0; }
+  margin-top: 25vh; }
   .categories .change-category {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -336,6 +342,7 @@ a {
   border: 10px dotted #ffda76;
   border-radius: 50px;
   padding: 2rem;
+  margin-top: 25vh;
   /* questions */
   /* question options to show answer and go to next question in the category */ }
   .questions .question {
