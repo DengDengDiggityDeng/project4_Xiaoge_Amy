@@ -2,6 +2,16 @@
   .categories{
     color: $accent3;
     margin: 25vh 0;
+
+    .change-category{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 4%;
+      background: $accent2;
+      border-radius: 50px;
+    }
     
     ul{
       height: 50vh;

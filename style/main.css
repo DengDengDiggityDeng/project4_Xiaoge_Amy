@@ -275,6 +275,18 @@ a {
 .categories {
   color: #ffda76;
   margin: 25vh 0; }
+  .categories .change-category {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 4%;
+    background: #4d91bc;
+    border-radius: 50px; }
   .categories ul {
     height: 50vh;
     display: -webkit-box;
