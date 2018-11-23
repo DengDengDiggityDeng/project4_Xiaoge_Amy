@@ -180,7 +180,7 @@ ul, li {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -212,7 +212,29 @@ ul, li {
     bottom: 0;
     height: 100vh;
     -o-object-fit: fill;
-    object-fit: fill; }
+    object-fit: fill;
+    z-index: 0; }
+  .parallax-layer .start {
+    font-size: 4rem;
+    -webkit-text-stroke: 1px #ffda76;
+    -webkit-transform: translateY(80vh);
+    -ms-transform: translateY(80vh);
+    transform: translateY(80vh);
+    display: inline-block;
+    color: #dd6a66;
+    z-index: 1000;
+    height: 4rem;
+    padding: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 25px; }
 
 /* main content is in here */
 .parallax-body {
@@ -221,7 +243,7 @@ ul, li {
   display: block;
   position: absolute;
   /* top must be > 85% so as to not cover up parallax_layer_5 */
-  top: 90%;
+  top: 100%;
   left: 0;
   right: 0;
   z-index: 0; }
