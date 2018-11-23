@@ -277,15 +277,17 @@ h1 {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     padding: 0;
     margin: 0; }
   .categories .category {
     display: inline-block;
-    width: 25%;
-    border: 1px solid goldenrod;
+    width: 30%;
+    margin: 0 1%;
+    background: #dd6a66;
+    border-radius: 5%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
