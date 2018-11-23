@@ -86,9 +86,9 @@ app.click = function(){
      $('.category').on('click', function() {
           app.categoryChoice = $(this)[0].id;          
           app.call(app.categoryChoice, app.offsetValue)
-          $('.show-answer').removeClass('visually-hidden');
-          $('.next-question').removeClass('visually-hidden');
-          $('.category-p').removeClass('visually-hidden');
+          $('.show-answer').removeClass('hide');
+          $('.next-question').removeClass('hide');
+          $('.category-p').removeClass('hide');
      })
 
 }

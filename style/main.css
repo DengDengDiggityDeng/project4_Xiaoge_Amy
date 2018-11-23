@@ -258,9 +258,6 @@ h1 {
   -webkit-transform: translateZ(0px) scale(1);
   transform: translateZ(0px) scale(1); }
 
-.visually-hidden {
-  visibility: hidden; }
-
 .hide {
   visibility: hidden; }
 
