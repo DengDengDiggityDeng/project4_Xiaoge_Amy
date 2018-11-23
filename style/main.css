@@ -268,6 +268,9 @@ a {
 .show {
   visibility: visible; }
 
+.display-none {
+  display: none; }
+
 /* categories */
 .categories {
   color: #ffda76;
