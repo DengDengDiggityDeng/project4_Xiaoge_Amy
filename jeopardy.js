@@ -86,6 +86,7 @@ app.click = function(){
      $('.category').on('click', function() {
           app.categoryChoice = $(this)[0].id;          
           app.call(app.categoryChoice, app.offsetValue)
+          $('.show-answer').removeClass('visually-hidden');
           $('.next-question').removeClass('visually-hidden');
           $('.category-p').removeClass('visually-hidden');
      })
@@ -94,7 +95,7 @@ app.click = function(){
 //-------------------------Show answer---------------------------
 
 app.answerToggle = function () {
-     $('.answer').on('click', function () {
+     $('.show-answer').on('click', function () {
           $('.answer').removeClass('hide');
           $('.answer').addClass('show');
      });
