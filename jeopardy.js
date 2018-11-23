@@ -43,13 +43,13 @@ app.displayResults = function (questions) {
                if (q.question !== "") {
                $('.clue').html(
                `    <div class="question">
-                         <p>Question: ${q.question} <p> 
+                         <p>${q.question} <p> 
                     </div>`)
 
                $('.answer').html(
           `    <div>
-                    <p>Answer: ${q.answer}</p>
-                    <p>Air Date: ${q.airdate.substring(0,10)}</p>
+                    <p>${q.answer}</p>
+                    <p>Jeopardy Air Date: ${q.airdate.substring(0,10)}</p>
                </div>`)
 
                $('.question-category').html(`${q.category.title}`);
@@ -87,9 +87,16 @@ app.click = function(){
           app.categoryChoice = $(this)[0].id;          
           app.call(app.categoryChoice, app.offsetValue)
           $('.show-answer').removeClass('hide');
+          $('.answer').removeClass('show');
+          $('.answer').addClass('hide');
           $('.next-question').removeClass('hide');
           $('.category-p').removeClass('hide');
+
      })
+
+    
+
+
 
 }
 //-------------------------Show answer---------------------------
