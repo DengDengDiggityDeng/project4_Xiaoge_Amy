@@ -22,6 +22,10 @@ h1{
   -webkit-text-stroke: 1px $background;
 }
 
+a{
+  text-decoration: none;
+}
+
 .wrapper{
   width: 80%;
   margin: 0 auto;
@@ -78,7 +82,8 @@ h1{
 
 /* footer */
 .parallax-footer{
-  background-color: white;
+  background-color: $secondary;
+  color: $accent3;
   text-align: center;
   display: flex;
   flex-direction: column;
