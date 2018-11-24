@@ -131,7 +131,7 @@ app.click = function(){
 
           // console.log($(this).find('p')[0].id);          
           app.categoryChoice = $(this).find('p')[0].id;          
-          app.call(app.categoryChoice, app.offsetValue)
+          app.call(app.categoryChoice, 0)
           $('.pick-first').addClass('display-none');
           $('.show-answer').removeClass('hide');
           $('.answer').removeClass('show');
