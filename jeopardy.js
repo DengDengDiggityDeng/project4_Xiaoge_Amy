@@ -128,10 +128,10 @@ app.newCategories = function(){
 app.click = function(){
 
      $('.category').on('click', function() {
-
+          app.offsetValue = 0;
           // console.log($(this).find('p')[0].id);          
           app.categoryChoice = $(this).find('p')[0].id;          
-          app.call(app.categoryChoice, 0)
+          app.call(app.categoryChoice, app.offsetValue)
           $('.pick-first').addClass('display-none');
           $('.show-answer').removeClass('hide');
           $('.answer').removeClass('show');
