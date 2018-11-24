@@ -84,7 +84,9 @@ app.displayCategories = function (categories) {
      $('.category3').html(`<p id="${categories[2].id}">${categories[2].title} </p>`);
  }; 
 
-//-------------------------Change offset of categories and questions --------------------
+//-------------------------Change offset of questions and categories --------------------
+
+//Question offset change function
 
 app.changeOffset = function() {
      app.offsetValue = 0
@@ -101,6 +103,7 @@ app.changeOffset = function() {
      })
 }
 
+//category offset change function
 
 app.catoffsetValue = 10 // category call offset
 
