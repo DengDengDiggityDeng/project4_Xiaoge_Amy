@@ -11,7 +11,7 @@ app.url = "http://jservice.io/api/";
 
 /*----------------------------------------------*/
 
-console.log("hey there")
+// console.log("hey there")
 
 //-------------------------API CALL FUNCTIONS--------------------
 
@@ -42,7 +42,7 @@ app.callCategories = function (offset) {
             offset: offset,
         }
     }).then((res) => {
-        console.log(res);
+        // console.log(res);
         app.displayCategories(res);
     });
 }
@@ -90,7 +90,8 @@ app.displayCategories = function (categories) {
 
 app.changeOffset = function () {
     app.offsetValue = 0
-    $('.next-question').on('click', function () {
+    $('.next-question').on('click', function (e) {
+        e.preventDefault();
         $('.answer').removeClass('show');
         $('.answer').addClass('hide');
         if (app.offsetValue < 5) {
@@ -108,7 +109,8 @@ app.changeOffset = function () {
 app.catoffsetValue = 10 // category call offset
 
 app.newCategories = function () {
-    $('.change-category').on('click', function () {
+    $('.change-category').on('click', function (e) {
+        e.preventDefault();
         $('.answer').removeClass('show');
         $('.answer').addClass('hide');
         if (app.catoffsetValue < 1000) {
@@ -128,6 +130,7 @@ app.newCategories = function () {
 app.click = function () {
 
     $('.category').on('click', function () {
+
         app.offsetValue = 0;
         // console.log($(this).find('p')[0].id);          
         app.categoryChoice = $(this).find('p')[0].id;
@@ -147,11 +150,13 @@ app.click = function () {
 //-------------------------Show answer---------------------------
 
 app.answerToggle = function () {
-    $('.show-answer').on('click', function () {
+    $('.show-answer').on('click', function (e) {
+        e.preventDefault();
         $('.answer').removeClass('hide');
         $('.answer').addClass('show');
     });
 }
+
 
 
 
