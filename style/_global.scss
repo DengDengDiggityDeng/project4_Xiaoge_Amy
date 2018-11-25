@@ -8,10 +8,14 @@ html{
 body{
   /* 16px */
   font-size: 1.6rem;
-  background: $background;
+  font-family: $body;
+  background-color: $background;
 }
 
 h1{
+  padding: 0;
+  margin-top: 27.5vh;
+  text-transform: uppercase;
   font-size: 6rem;
   font-family: $h1;
   line-height: 1;
@@ -20,9 +24,12 @@ h1{
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding-bottom: 90px;
-  z-index: 10;
   -webkit-text-stroke: 1px $background;
+}
+
+h2{
+  text-align: center;
+  text-transform: uppercase;
 }
 
 a{
@@ -34,82 +41,51 @@ ul, li{
   list-style-type: none;
 }
 
+main {
+  position: relative;
+  background-color: $background;
+  color: #ffffff;
+  padding: 100px;
+  transition: padding 1s;
+  @media screen and (max-width: 700px){
+    padding: 20px;
+  }
+}
 .wrapper{
   width: 80%;
   margin: 0 auto;
+  transition: width 1s;
+  @media screen and (max-width: 700px){
+    width: 90%;
+  }
 }
 
-/* full view height parallax with 5 layers */
-.parallax{
-  // perspective: 100px;
+#parallax-container {
+  position: relative;
+  display: block;
   height: 100vh;
-  overflow-x: hidden;
-  // width: 100vw;
-  // overflow-x: hidden;
-  // overflow-y: auto;
-  // position: relative;
-  // top: 0;
-  // left: 0;
-  // right: 0;
-  // bottom: 0;
-  // background: $background;
-}
-
-/* styling of individual parallax layers */
-.parallax-layer{
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  flex-direction: colomn;
-  justify-content: center;
-  overflow-x: hidden;
-  
-  /* styling of img inside each parallax layer */
-  img{
-    display: block;
-    position: absolute;
+  object-fit: contain;
+  div {
+    position: fixed;
     top: 0;
-    bottom: 0;
-    height: 100vh;
-    object-fit: fill;
-    z-index: 0;
-  }
-  
-  .start{
-    font-size: 4rem;
-    -webkit-text-stroke: 1px $accent3;
-    transform: translateY(90vh);
-    display: inline-block;
-    color: $secondary;
-    z-index: 1000;
-    // position: absolute;
-    // bottom: 0;
-    height: 4rem;
-    padding: 3rem ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25px;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    // transform: translateY(0px);
+    height: 90vh;
+    width: 100%;
+
+    &:nth-child(1){background: url(../parallax/layer_1.png);}
+    &:nth-child(2){background: url(../parallax/layer_2.png);}
+    &:nth-child(3){background: url(../parallax/layer_3.png);}
+    &:nth-child(4){background: url(../parallax/layer_4.png);}
+    &:nth-child(5){background: url(../parallax/layer_5.png);}
   }
 }
 
-/* main content is in here */
-.parallax-body{
-  /* background is the default */
-  // display: block;
-  // position: absolute;
-  /* top must be > 85% so as to not cover up parallax_layer_5 */
-  // top: 100%;
-  // left: 0;
-  // right: 0;
-  // z-index: 0;
-}
 
 /* footer */
-.parallax-footer{
+footer{
   background-color: $secondary;
   color: $accent3;
   text-align: center;
@@ -118,15 +94,6 @@ ul, li{
   justify-content: center;
   margin-top: 25vh;
 }
-
-/* sets the number of parallax layers and does the actual parallax effect */
-// $parallax_layers: 5;
-// @for $i from 0 through $parallax_layers {
-//   $x: ($parallax_layers - $i) / 2;
-//   .parallax_layer_#{$i}{
-//      transform: translateZ(-100 * $x#{px}) scale($x + 1);
-//   }
-// }
 
 //------------- CLASSES FOR HIDING AND SHOWING ANSWER: 
 

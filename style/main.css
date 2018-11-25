@@ -141,9 +141,13 @@ html {
 body {
   /* 16px */
   font-size: 1.6rem;
-  background: #994848; }
+  font-family: "Roboto", sans-serif;
+  background-color: #994848; }
 
 h1 {
+  padding: 0;
+  margin-top: 27.5vh;
+  text-transform: uppercase;
   font-size: 6rem;
   font-family: "Rum Raisin", sans-serif;
   line-height: 1;
@@ -159,9 +163,11 @@ h1 {
   -ms-flex-pack: center;
   justify-content: center;
   text-align: center;
-  padding-bottom: 90px;
-  z-index: 10;
   -webkit-text-stroke: 1px #994848; }
+
+h2 {
+  text-align: center;
+  text-transform: uppercase; }
 
 a {
   text-decoration: none;
@@ -170,72 +176,55 @@ a {
 ul, li {
   list-style-type: none; }
 
+main {
+  position: relative;
+  background-color: #994848;
+  color: #ffffff;
+  padding: 100px;
+  -webkit-transition: padding 1s;
+  -o-transition: padding 1s;
+  transition: padding 1s; }
+  @media screen and (max-width: 700px) {
+    main {
+      padding: 20px; } }
+
 .wrapper {
   width: 80%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  -webkit-transition: width 1s;
+  -o-transition: width 1s;
+  transition: width 1s; }
+  @media screen and (max-width: 700px) {
+    .wrapper {
+      width: 90%; } }
 
-/* full view height parallax with 5 layers */
-.parallax {
+#parallax-container {
+  position: relative;
+  display: block;
   height: 100vh;
-  overflow-x: hidden; }
-
-/* styling of individual parallax layers */
-.parallax-layer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: colomn;
-  flex-direction: colomn;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  overflow-x: hidden;
-  /* styling of img inside each parallax layer */ }
-  .parallax-layer img {
-    display: block;
-    position: absolute;
+  -o-object-fit: contain;
+  object-fit: contain; }
+  #parallax-container div {
+    position: fixed;
     top: 0;
-    bottom: 0;
-    height: 100vh;
-    -o-object-fit: fill;
-    object-fit: fill;
-    z-index: 0; }
-  .parallax-layer .start {
-    font-size: 4rem;
-    -webkit-text-stroke: 1px #ffda76;
-    -webkit-transform: translateY(90vh);
-    -ms-transform: translateY(90vh);
-    transform: translateY(90vh);
-    display: inline-block;
-    color: #dd6a66;
-    z-index: 1000;
-    height: 4rem;
-    padding: 3rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    border-radius: 25px; }
-
-/* main content is in here */
-.parallax-body {
-  /* background is the default */
-  /* top must be > 85% so as to not cover up parallax_layer_5 */ }
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    height: 90vh;
+    width: 100%; }
+    #parallax-container div:nth-child(1) {
+      background: url(../parallax/layer_1.png); }
+    #parallax-container div:nth-child(2) {
+      background: url(../parallax/layer_2.png); }
+    #parallax-container div:nth-child(3) {
+      background: url(../parallax/layer_3.png); }
+    #parallax-container div:nth-child(4) {
+      background: url(../parallax/layer_4.png); }
+    #parallax-container div:nth-child(5) {
+      background: url(../parallax/layer_5.png); }
 
 /* footer */
-.parallax-footer {
+footer {
   background-color: #dd6a66;
   color: #ffda76;
   text-align: center;
@@ -251,7 +240,6 @@ ul, li {
   justify-content: center;
   margin-top: 25vh; }
 
-/* sets the number of parallax layers and does the actual parallax effect */
 .hide {
   visibility: hidden; }
 
@@ -266,6 +254,8 @@ ul, li {
   color: #ffda76;
   margin-top: 25vh; }
   .categories .change-category {
+    text-transform: uppercase;
+    border: 7px dotted #ffda76;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -274,7 +264,7 @@ ul, li {
     justify-content: center;
     text-align: center;
     padding: 20px;
-    margin-bottom: 4%;
+    margin-top: 4%;
     background: #4d91bc;
     border-radius: 50px; }
   .categories ul {
@@ -291,28 +281,46 @@ ul, li {
     justify-content: space-between;
     padding: 0;
     margin: 0; }
+    @media screen and (max-width: 700px) {
+      .categories ul {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        width: 100%; } }
   .categories .category {
     display: inline-block;
     width: 30%;
     margin: 0 1%;
     background: #dd6a66;
     border-radius: 5%; }
-
-.category-anchor {
-  display: block;
-  height: 100%;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
+    @media screen and (max-width: 700px) {
+      .categories .category {
+        width: 100%;
+        margin: 1% 0;
+        padding: 15px 0;
+        border-radius: 10px; } }
+  .categories .category-anchor {
+    display: block;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    @media screen and (max-width: 700px) {
+      .categories .category-anchor {
+        width: 100%; } }
 
 .questions {
+  color: #ffda76;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -328,10 +336,9 @@ ul, li {
   align-items: center;
   text-align: center;
   background-color: #4d91bc;
-  border: 10px dotted #ffda76;
   border-radius: 50px;
   padding: 2rem;
-  margin-top: 25vh;
+  margin-top: 40vh;
   /* questions */
   /* question options to show answer and go to next question in the category */ }
   .questions .question {
@@ -344,3 +351,6 @@ ul, li {
     display: flex;
     -ms-flex-pack: distribute;
     justify-content: space-around; }
+  .questions .pick-first {
+    margin: 30px 0 0px 0;
+    text-transform: uppercase; }

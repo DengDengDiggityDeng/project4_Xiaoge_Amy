@@ -1,38 +1,47 @@
 /* categories */
-  .categories{
-    color: $accent3;
-    margin-top: 25vh;
+.categories{
+  color: $accent3;
+  margin-top: 25vh;
 
-    .change-category{
-      display: flex;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      margin-bottom: 4%;
-      background: $accent2;
-      border-radius: 50px;
+  .change-category{
+    text-transform: uppercase;
+    border: 7px dotted $accent3;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    margin-top: 4%;
+    background: $accent2;
+    border-radius: 50px;
+  }
+  
+  ul{
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    @media screen and (max-width: 700px){
+      flex-direction: column;
+      justify-content: space-around;
+      width: 100%;
     }
-    
-    ul{
-      height: 50vh;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      padding: 0;
-      margin: 0;
-      
+  }
+  
+  .category{
+    display: inline-block;
+    width: 30%;
+    margin: 0 1%;
+    background: $secondary;
+    border-radius: 5%;
+    @media screen and (max-width: 700px){
+      width: 100%;
+      margin: 1% 0;
+      padding: 15px 0;
+      border-radius: 10px;
     }
-    
-    .category{
-      display: inline-block;
-      width: 30%;
-      margin: 0 1%;
-      background: $secondary;
-      border-radius: 5%;
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
-    }
+
   }
 
   .category-anchor {
@@ -40,6 +49,10 @@
     height: 100%;
     width: 100%;
     display: flex;
-      justify-content: center;
-      align-items: center;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 700px){
+      width: 100%;
+    }
   }
+}
