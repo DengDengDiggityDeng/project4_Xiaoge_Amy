@@ -140,7 +140,8 @@ html {
 
 body {
   /* 16px */
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  background: #994848; }
 
 h1 {
   font-size: 6rem;
@@ -175,17 +176,8 @@ ul, li {
 
 /* full view height parallax with 5 layers */
 .parallax {
-  -webkit-perspective: 100px;
-  perspective: 100px;
   height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #994848; }
+  overflow-x: hidden; }
 
 /* styling of individual parallax layers */
 .parallax-layer {
@@ -204,6 +196,7 @@ ul, li {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  overflow-x: hidden;
   /* styling of img inside each parallax layer */ }
   .parallax-layer img {
     display: block;
@@ -217,9 +210,9 @@ ul, li {
   .parallax-layer .start {
     font-size: 4rem;
     -webkit-text-stroke: 1px #ffda76;
-    -webkit-transform: translateY(80vh);
-    -ms-transform: translateY(80vh);
-    transform: translateY(80vh);
+    -webkit-transform: translateY(90vh);
+    -ms-transform: translateY(90vh);
+    transform: translateY(90vh);
     display: inline-block;
     color: #dd6a66;
     z-index: 1000;
@@ -239,14 +232,7 @@ ul, li {
 /* main content is in here */
 .parallax-body {
   /* background is the default */
-  background: #994848;
-  display: block;
-  position: absolute;
-  /* top must be > 85% so as to not cover up parallax_layer_5 */
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 0; }
+  /* top must be > 85% so as to not cover up parallax_layer_5 */ }
 
 /* footer */
 .parallax-footer {
@@ -266,30 +252,6 @@ ul, li {
   margin-top: 25vh; }
 
 /* sets the number of parallax layers and does the actual parallax effect */
-.parallax_layer_0 {
-  -webkit-transform: translateZ(-250px) scale(3.5);
-  transform: translateZ(-250px) scale(3.5); }
-
-.parallax_layer_1 {
-  -webkit-transform: translateZ(-200px) scale(3);
-  transform: translateZ(-200px) scale(3); }
-
-.parallax_layer_2 {
-  -webkit-transform: translateZ(-150px) scale(2.5);
-  transform: translateZ(-150px) scale(2.5); }
-
-.parallax_layer_3 {
-  -webkit-transform: translateZ(-100px) scale(2);
-  transform: translateZ(-100px) scale(2); }
-
-.parallax_layer_4 {
-  -webkit-transform: translateZ(-50px) scale(1.5);
-  transform: translateZ(-50px) scale(1.5); }
-
-.parallax_layer_5 {
-  -webkit-transform: translateZ(0px) scale(1);
-  transform: translateZ(0px) scale(1); }
-
 .hide {
   visibility: hidden; }
 

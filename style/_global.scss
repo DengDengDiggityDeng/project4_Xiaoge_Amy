@@ -8,6 +8,7 @@ html{
 body{
   /* 16px */
   font-size: 1.6rem;
+  background: $background;
 }
 
 h1{
@@ -40,16 +41,18 @@ ul, li{
 
 /* full view height parallax with 5 layers */
 .parallax{
-  perspective: 100px;
+  // perspective: 100px;
   height: 100vh;
   overflow-x: hidden;
-  overflow-y: auto;
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: $background;
+  // width: 100vw;
+  // overflow-x: hidden;
+  // overflow-y: auto;
+  // position: relative;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  // background: $background;
 }
 
 /* styling of individual parallax layers */
@@ -62,6 +65,7 @@ ul, li{
   display: flex;
   flex-direction: colomn;
   justify-content: center;
+  overflow-x: hidden;
   
   /* styling of img inside each parallax layer */
   img{
@@ -77,7 +81,7 @@ ul, li{
   .start{
     font-size: 4rem;
     -webkit-text-stroke: 1px $accent3;
-    transform: translateY(80vh);
+    transform: translateY(90vh);
     display: inline-block;
     color: $secondary;
     z-index: 1000;
@@ -95,14 +99,13 @@ ul, li{
 /* main content is in here */
 .parallax-body{
   /* background is the default */
-  background: $background;
-  display: block;
-  position: absolute;
+  // display: block;
+  // position: absolute;
   /* top must be > 85% so as to not cover up parallax_layer_5 */
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 0;
+  // top: 100%;
+  // left: 0;
+  // right: 0;
+  // z-index: 0;
 }
 
 /* footer */
@@ -117,13 +120,13 @@ ul, li{
 }
 
 /* sets the number of parallax layers and does the actual parallax effect */
-$parallax_layers: 5;
-@for $i from 0 through $parallax_layers {
-  $x: ($parallax_layers - $i) / 2;
-  .parallax_layer_#{$i}{
-     transform: translateZ(-100 * $x#{px}) scale($x + 1);
-  }
-}
+// $parallax_layers: 5;
+// @for $i from 0 through $parallax_layers {
+//   $x: ($parallax_layers - $i) / 2;
+//   .parallax_layer_#{$i}{
+//      transform: translateZ(-100 * $x#{px}) scale($x + 1);
+//   }
+// }
 
 //------------- CLASSES FOR HIDING AND SHOWING ANSWER: 
 
