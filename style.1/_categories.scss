@@ -2,8 +2,12 @@
 .categories{
   color: $accent3;
   margin-top: 25vh;
+  padding-top: 25px;
 
   .change-category{
+    color: white;
+    background: $accent2;
+    -webkit-text-stroke: 1px $accent3;
     text-transform: uppercase;
     border: 7px dotted $accent3;
     display: flex;
@@ -11,8 +15,21 @@
     text-align: center;
     padding: 20px;
     margin-top: 4%;
-    background: $accent2;
     border-radius: 50px;
+    font-weight: bold;
+    &:hover{
+      animation: wiggle 1s;
+    }
+    @media screen and (max-width: 700px){
+    margin-top: 30px;
+    }
+  }
+
+  @keyframes wiggle {
+    10%, 90% {transform: translate3d(-5px, 0, 0);}
+    20%, 80% {transform: translate3d(5px, 0, 0);}
+    30%, 50%, 70% {transform: translate3d(-5px, 0, 0);}
+    40%, 60% {transform: translate3d(5px, 0, 0);}
   }
   
   ul{
@@ -35,6 +52,7 @@
     margin: 0 1%;
     background: $secondary;
     border-radius: 5%;
+    border: 5px solid $accent3;
     @media screen and (max-width: 700px){
       width: 100%;
       margin: 1% 0;
@@ -51,6 +69,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    p{
+      text-align: center;
+    }
     @media screen and (max-width: 700px){
       width: 100%;
     }
