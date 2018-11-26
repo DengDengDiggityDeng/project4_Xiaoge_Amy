@@ -6,22 +6,57 @@
   align-items: center;
   text-align: center;
   background-color: $accent2;
+  border: 7px solid $accent;
   border-radius: 50px;
   padding: 2rem;
   margin-top: 40vh;
+
+  /* question title */
+  .question-info{
+    .category-p{
+      .question-category{
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        -webkit-text-stroke: 2px $accent;
+        transition: font-size 1s;
+        @media screen and (max-width: 700px){
+          font-size: 2rem;
+        }
+      }
+    }
+  }
   
   /* questions */
   .question{
     color:white;
     padding: 0 20px;
+    font-weight: bold;
   }
+
   /* question options to show answer and go to next question in the category */
   .question-options{
     width: 100%;
     display: flex;
     justify-content: space-around;
+    @media screen and (max-width: 700px){
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* show-answer button & next-question button */
+    .show-answer,
+    .next-question{
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 2rem;
+      -webkit-text-stroke: 1px $accent3;
+      padding: 10px 0;
+    }
   }
 
+  /* place holder for questions */
   .pick-first{
     margin: 30px 0 0px 0;
     text-transform: uppercase;

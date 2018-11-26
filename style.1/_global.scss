@@ -25,11 +25,20 @@ h1{
   justify-content: center;
   text-align: center;
   -webkit-text-stroke: 1px $background;
+  transition: font-size 1s;
+  @media screen and (max-width: 700px){
+    font-size: 5rem;
+  }
+  
 }
 
 h2{
+  font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+  @media screen and (max-width: 700px){
+    margin-bottom: 30px;
+  }
 }
 
 a{
@@ -45,18 +54,36 @@ main {
   position: relative;
   background-color: $background;
   color: #ffffff;
-  padding: 100px;
+  padding: 0px 100px 100px 100px;
   transition: padding 1s;
   @media screen and (max-width: 700px){
     padding: 20px;
   }
 }
+
 .wrapper{
   width: 80%;
   margin: 0 auto;
   transition: width 1s;
   @media screen and (max-width: 700px){
     width: 90%;
+  }
+}
+
+.start-container{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 65px;
+  .start{
+    opacity: 1;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 4rem;
+    color: $accent3;
+    -webkit-text-stroke: 1px $accent3;
+    
   }
 }
 
@@ -79,7 +106,10 @@ main {
     &:nth-child(2){background: url(../parallax/layer_2.png);}
     &:nth-child(3){background: url(../parallax/layer_3.png);}
     &:nth-child(4){background: url(../parallax/layer_4.png);}
-    &:nth-child(5){background: url(../parallax/layer_5.png);}
+    &:nth-child(5){
+      background: url(../parallax/layer_5.png);
+      text-align: center;
+    }
   }
 }
 
@@ -92,10 +122,10 @@ footer{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 25vh;
+  margin-top: 30px;
 }
 
-//------------- CLASSES FOR HIDING AND SHOWING ANSWER: 
+/* classes for hiding and showing answers */
 
 .hide {
   visibility: hidden;
@@ -106,5 +136,5 @@ footer{
 }
 
 .display-none{
-  visibility: hidden;
+  display: none;
 }

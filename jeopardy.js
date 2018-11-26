@@ -167,6 +167,22 @@ document.addEventListener('scroll', () => {
      }
 }, false)
 
+//------------ change opacity of start "hand" on scroll down -------
+
+$(window).scroll(function () {
+     let heightFromTop = $(this).scrollTop();
+
+     $('.start').css({
+          opacity: function () {
+               let handHeight = $(this).height(),
+                    /* opacity changes based on height of the hand from the height from the top, 
+                    multiplied by 0.5 on scroll height from the top,
+                    3 + to give some more space for the opacity transition so its not too sudden */
+                    opacity = ((3 + (handHeight - heightFromTop) / handHeight) * 0.5);
+               return opacity;
+          }
+     });
+});
 
 
 
